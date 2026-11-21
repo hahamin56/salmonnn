@@ -1,0 +1,22 @@
+{
+  "name": "multicraft",
+  "productName": "MULTICRAFT",
+  "version": "0.2.0",
+  "description": "MULTICRAFT",
+  "author": "MULTICRAFT",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win dir --publish never" },
+  "dependencies": { "@fontsource/press-start-2p": "^5.0.0", "three": "0.128.0" },
+  "devDependencies": { "electron": "^33.2.0", "electron-builder": "^25.1.8" },
+  "build": {
+    "appId": "com.multicraft.game",
+    "productName": "MULTICRAFT",
+    "files": ["main.js"],
+    "extraFiles": [
+      { "from": "game", "to": "game" },
+      { "from": "node_modules/three/build/three.min.js", "to": "game/lib/three.min.js" },
+      { "from": "node_modules/@fontsource/press-start-2p", "to": "game/fonts" }
+    ],
+    "win": { "target": "dir" }
+  }
+}
